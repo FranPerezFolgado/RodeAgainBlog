@@ -9,6 +9,9 @@ export default {
 		}, 
 		extend: {},
 	},
-	plugins: [],	
+	darkMode: "media",
+	plugins: [
+		require('@tailwindcss/typography')
+	],	
 }
  
