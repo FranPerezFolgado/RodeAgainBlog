@@ -2,8 +2,6 @@
 import { SITE_TITLE } from "@consts";
 import HeaderLink from "./HeaderLink.astro";
 import { Astronav, MenuItems, MenuIcon,  OpenIcon, CloseIcon } from "astro-navbar";
-import BurgerMenu from "./BurgerMenu.astro";
-import CloseMenu from "./CloseMenu.astro";
 
 ---
 
@@ -33,52 +31,4 @@ import CloseMenu from "./CloseMenu.astro";
  </MenuItems>
 </Astronav>
 
-<!-- <div class="px-4 py-4 lg:px-8 lg:py-6 xl:px-16 xl:py-8">
-    <div
-      class="flex flex-row flex-wrap items-center justify-between border-b border-b-blue-500/25 pb-2 lg:border-b-0 lg:pb-0"
-    >
-      <a class="font-blackdemo text-4xl font-bold">{SITE_TITLE}</a>
-      <button
-        class="rounded p-1 hover:bg-slate-950 lg:hidden"
-        aria-label="Toggle menu"
-        data-toggle-menu=""
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="h-6 w-6"
-          data-toggle-open-menu-icon=""
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="hidden h-6 w-6"
-          data-toggle-close-menu-icon=""
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18 18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <nav
-        class="my-4 md:my-0 flex-col md:flex md:flex-row text-center xl:text-left xl:space-x-4 text-base hidden"
-      >
-        <HeaderLink href="/" text="Home" />
-        <HeaderLink href="/about" text="About" />
-        <HeaderLink href="/gallery" text="Gallery" />
-      </nav>
-    </div>
-  </div>    -->
 </header>
