@@ -1,6 +1,6 @@
 ---
 import { SITE_TITLE } from "@consts";
-import HeaderLink from "./HeaderLink.astro";
+import Link from "./Link.astro";
 import { Astronav, MenuItems, MenuIcon,  OpenIcon, CloseIcon } from "astro-navbar";
 
 ---
@@ -19,13 +19,13 @@ import { Astronav, MenuItems, MenuIcon,  OpenIcon, CloseIcon } from "astro-navba
   
   <ul class="flex flex-col lg:flex-row lg:gap-5">
      <li>
-      <HeaderLink href="/" text="Home" />
+      <Link href="/" text="Home" class="pl-5 pr-5"/>
      </li>
      <li>
-      <HeaderLink href="/about" text="About" />
+      <Link href="/about" text="About" class="pl-5 pr-5" />
     </li>
      <li>
-      <HeaderLink href="/gallery" text="Gallery" />
+      <Link href="/gallery" text="Gallery" class="pl-5 pr-5"/>
     </li>
   </ul>
  </MenuItems>
