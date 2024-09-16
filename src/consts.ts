@@ -3,3 +3,6 @@
 
 export const SITE_TITLE = 'RodeAgain';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
+
+
+export const POST_PER_PAGE = 7;

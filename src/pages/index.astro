@@ -2,23 +2,39 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, POST_PER_PAGE } from "../consts";
 import LastPostCard from "../components/LastPostCard.astro";
 import PostCard from "@components/PostCard.astro";
+import Pagination from "@components/Pagination.astro";
 
 const allPosts = await getCollection("posts");
 allPosts.sort(
   (a, b) =>
     new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
 );
+
+
+const firstPagePosts = allPosts.slice(0, POST_PER_PAGE);
+const totalPages = Math.ceil(allPosts.length / POST_PER_PAGE);
+
+const basePath = "/page/";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <div class="m-10 flex flex-col items-center">
-    <LastPostCard post={allPosts[0]} />
+    <LastPostCard post={firstPagePosts[0]} />
 
     <div class="p-20 gap-10 grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-      {allPosts.slice(1).map((post) => <PostCard post={post} />)}
+      {firstPagePosts.slice(1).map((post) => <PostCard post={post} />)}
     </div>
   </div>
+
+  <Pagination
+    currentPage={1}
+    lastPage={totalPages}
+    urlPrev={null}
+    urlNext={totalPages > 1 ? `/page/2` : null}
+    basePath={basePath}
+    maxDisplayedPages={5}
+  />
 </BaseLayout>

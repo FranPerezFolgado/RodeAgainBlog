@@ -1,0 +1,87 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import LastPostCard from "@components/LastPostCard.astro";
+import PostCard from "@components/PostCard.astro";
+import Pagination from "@components/Pagination.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, POST_PER_PAGE } from "@consts";
+import type { ACTION_ERROR_CODES } from "astro:actions";
+
+export async function getStaticPaths() {
+  console.log("getStaticPaths");
+  const allPosts = await getCollection("posts");
+  allPosts.sort(
+    (a, b) =>
+      new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+  );
+
+  const firstPagePosts = allPosts.slice(0, POST_PER_PAGE);
+  const remainingPosts = allPosts.slice(POST_PER_PAGE);
+  const totalPages = 1 + Math.ceil(remainingPosts.length / 12);
+
+  const paths = [
+    {
+      params: { page: "1" },
+      props: {
+        page: {
+          data: firstPagePosts,
+          currentPage: 1,
+          lastPage: totalPages,
+        },
+      },
+    },
+  ];
+
+  for (let i = 2; i <= totalPages; i++) {
+    const pagePosts = remainingPosts.slice((i - 2) * 12, (i - 1) * 12);
+    paths.push({
+      params: { page: i.toString() },
+      props: {
+        page: { data: pagePosts, currentPage: i, lastPage: totalPages },
+      },
+    });
+  }
+  return paths;
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  {
+    page.currentPage === 1 ? (
+      <>
+        <div class="m-10 flex flex-col items-center">
+          {page.data.slice(0,1).map((post)=> (
+            <LastPostCard post={post} />
+          ))}
+
+          <div class="grid gap-10 p-20 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+            {page.data.slice(1).map((post) => (
+              <PostCard post={post} />
+            ))}{" "}
+          </div>
+        </div>
+      </>
+    ) : (
+      <div class="m-10 flex flex-col items-center">
+        <div class="grid gap-10 p-20 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          {page.data.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+  <Pagination
+    currentPage={page.currentPage}
+    lastPage={page.lastPage}
+    urlPrev={page.currentPage > 1 ? `/page/${page.currentPage - 1}` : null}
+    urlNext={page.currentPage < page.lastPage
+      ? `/page/${page.currentPage + 1}`
+      : null}
+    basePath="/page"
+    ;;:::¡
+    maxDisplayedPages={5}
+  />
+</BaseLayout>
