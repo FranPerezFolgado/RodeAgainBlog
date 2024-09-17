@@ -3,9 +3,10 @@ import { SITE_TITLE } from "@consts";
 import Link from "./Link.astro";
 import { Astronav, MenuItems, MenuIcon,  OpenIcon, CloseIcon } from "astro-navbar";
 
+const { class: className } = Astro.props;
 ---
 
-<header class="lg:flex justify-between p-10 gap-5 mx-auto container w-full">
+<header class={`lg:flex justify-between p-10 gap-5 mx-auto  w-full ${className}`}>
 
 <Astronav closeOnClick>
  
