@@ -2,22 +2,23 @@
 import Header from "@components/Header.astro";
 import "../styles/global.css";
 import Footer from "@components/Footer.astro";
+import BaseHead from "@components/BaseHead.astro";
 
 const { title, description } = Astro.props;
+const { class: headerClassName } = Astro.props;
+
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-<!--     <BaseHead title={title} description={description} />
- -->  </head>
+  <BaseHead title={title} description={description} />
   <body
-    class=" w-full mx-auto flex min-h-screen flex-col bg-black/90 dark:prose-invert"
+    class="mx-auto flex min-h-screen w-full flex-col bg-black/90 dark:prose-invert"
   >
-    <Header />
+    <Header class=`${headerClassName}`/>
     <div class="flex-grow">
       <slot />
     </div>
     <Footer />
   </body>
-  </html>
+</html>

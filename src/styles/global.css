@@ -16,7 +16,8 @@
   }
   
   html{
-    @apply bg-black/90 
+    @apply bg-black/90;
+    @apply scroll-smooth;
   }
 
   @font-face {

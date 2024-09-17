@@ -1,0 +1,42 @@
+---
+import Header from "@components/Header.astro";
+import "../styles/global.css";
+import Footer from "@components/Footer.astro";
+import OptimizedPicture from "@components/OptimizedPicture.astro";
+import Link from "@components/Link.astro";
+import { SITE_TITLE } from "@consts";
+import { Astronav, MenuIcon, MenuItems } from "astro-navbar";
+import BaseHead from "@components/BaseHead.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, cover, pubDate, tags } = Astro.props;
+---
+
+<!doctype html>
+<BaseLayout class="absolute z-20">
+  <div class="relative h-screen w-screen">
+    <div class="absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden">
+      <OptimizedPicture
+        src={cover}
+        alt={title}
+        class="block h-full w-full bg-cover bg-center blur-none transition-all duration-300 ease-in-out"
+      />
+    </div>
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 z-0 bg-black bg-opacity-50"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 z-10 flex flex-col items-center justify-center"
+    >
+      <h1
+        class="max-w-6xl text-center text-3xl font-bold text-white drop-shadow-sm md:text-4xl lg:text-5xl xl:text-7xl"
+      >
+        {title}
+      </h1>
+    </div>
+  </div>
+  <div class="flex-grow">
+    <slot />
+  </div>
+</BaseLayout>

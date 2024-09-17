@@ -1,0 +1,59 @@
+---
+import DownArrow from "@components/icons/DownArrow.astro";
+import OptimizedPicture from "@components/OptimizedPicture.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import PostLayout from "@layouts/PostLayout.astro";
+import { getPostCover } from "@utils/photos";
+import { getCollection } from "astro:content";
+import Separator from "@components/Separator.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<PostLayout
+  title={post.data.title}
+  description={post.data.description}
+  cover={post.data.cover}
+  pubDate={post.data.pubDate}
+  tags={post.data.tags}
+>
+  <div class="absolute bottom-4 left-0 right-0 z-10">
+    <a
+      href="#content-start"
+      class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform rounded-full bg-white/10 p-2 transition-all duration-300 ease-in-out hover:bg-white/90"
+      data-scroll
+      title="Scroll to content"
+    >
+      <DownArrow class="h-4 w-4" />
+    </a><div
+      class="mx-auto flex w-auto flex-row items-center justify-center space-x-2 text-sm font-semibold"
+    >
+      <FormattedDate date={post.data.pubDate} />
+      <Separator />
+      <a
+        href="/blog/development/"
+        class="capitalize no-underline hover:underline"
+        >development
+      </a>
+      <Separator />
+      <span>6 min read</span>
+    </div>
+  </div>
+  <article
+    class="prose prose-invert mx-auto w-full max-w-4xl font-commitmono lg:max-w-6xl pt-10"
+    id="content-start"
+  >
+    <p>{post.data.description}</p>
+
+    <Content />
+  </article>
+</PostLayout>
