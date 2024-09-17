@@ -1,6 +1,6 @@
 ---
 const className = Astro.props.class;
-const {href, text} = Astro.props;
+const {href, text, target = '_self'} = Astro.props;
 ---
 
-<a class={className} href={href}>{text}</a>
+<a class={className} href={href} target={target}>{text}</a>
