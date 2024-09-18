@@ -24,7 +24,7 @@ const basePath = "/page/";
   <div class="m-10 flex flex-col items-center">
     <LastPostCard post={firstPagePosts[0]} />
 
-    <div class="p-20 gap-10 grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+    <div class="pt-10 md:p-20 gap-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
       {firstPagePosts.slice(1).map((post) => <PostCard post={post} />)}
     </div>
   </div>
