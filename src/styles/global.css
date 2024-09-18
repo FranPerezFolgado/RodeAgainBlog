@@ -30,19 +30,8 @@
   }
   @font-face {
     font-family: "CommitMono-Regular-400";
-    src: url("../public/fonts/commit_mono/CommitMono-400-Regular.ttf");
-  }
-  @font-face {
-    font-family: "CommitMono-Italic-400";
-    src: url("../public/fonts/commit_mono/CommitMono-400-Italic.ttf");
-  }
-  @font-face {
-    font-family: "CommitMono-Regular-700";
-    src: url("../public/fonts/commit_mono/CommitMono-700-Regular.ttf");
-  }
-  @font-face {
-    font-family: "CommitMono-Italic-700";
-    src: url("../public/fonts/commit_mono/CommitMono-700-Italic.ttf");
+    src: url("../public/fonts/commit_mono/CommitMono-400-Regular.otf");
+  
   }
 }
 
