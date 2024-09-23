@@ -12,7 +12,7 @@ const posts = defineCollection({
       category: z.array(z.string()),
       tags: z.array(z.string()),
       author: z.string(),
-      monthDir: z.string(),
+      postAlbum: z.string().optional(),
     }),
 });
 

@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+const {images, postAlbum, title} = Astro.props;
+---
+{postAlbum && (
+    <div
+        class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 py-20"
+      >            {
+                images.map((image) => (
+                <Image
+                    src={image}
+                    alt={`Image from ${title} album`}
+                    format="avif"
+                    quality={80}
+                    class="h-auto max-w-full rounded-lg mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
+                    loading="lazy"
+                  />
+                ))
+              }        </div>
+  )}
+  
+
+ 

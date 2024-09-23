@@ -1,25 +1,23 @@
 ---
-import Header from "@components/Header.astro";
 import "../styles/global.css";
-import Footer from "@components/Footer.astro";
 import OptimizedPicture from "@components/OptimizedPicture.astro";
-import Link from "@components/Link.astro";
-import { SITE_TITLE } from "@consts";
-import { Astronav, MenuIcon, MenuItems } from "astro-navbar";
-import BaseHead from "@components/BaseHead.astro";
 import BaseLayout from "./BaseLayout.astro";
+import { getAlbumImages } from "@utils/photos";
+import PostGallery from "@components/PostGallery.astro";
 
-const { title, description, cover, pubDate, tags } = Astro.props;
+const { title, description, cover, pubDate, tags, postAlbum } = Astro.props;
+const postAlbumPromise = getAlbumImages(postAlbum);
+const images = await postAlbumPromise;
 ---
 
 <!doctype html>
 <BaseLayout class="absolute z-20">
   <div class="relative h-screen w-screen">
-    <div class="absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden ">
+    <div class="absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden">
       <OptimizedPicture
         src={cover}
         alt={title}
-        class="object-cover h-full w-full transition-all duration-300 ease-in-out"
+        class="h-full w-full object-cover transition-all duration-300 ease-in-out"
       />
     </div>
     <div
@@ -39,4 +37,8 @@ const { title, description, cover, pubDate, tags } = Astro.props;
   <div class="flex-grow">
     <slot />
   </div>
+  <PostGallery
+    images={images}
+    postAlbum={postAlbum}
+    title={title} />
 </BaseLayout>

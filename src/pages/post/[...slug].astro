@@ -17,6 +17,7 @@ export async function getStaticPaths() {
 
 const post = Astro.props;
 const { Content } = await post.render();
+
 ---
 
 <PostLayout
@@ -25,6 +26,7 @@ const { Content } = await post.render();
   cover={post.data.cover}
   pubDate={post.data.pubDate}
   tags={post.data.tags}
+  postAlbum={post.data.postAlbum}
 >
   <div class="absolute bottom-4 left-0 right-0 z-10">
     <a
