@@ -10,16 +10,25 @@ pubDate: 2024-09-16
 cover: ../../photos/092024/cover.jpg
 coverAlt: Graffiti from Valencia's streets
 author: Fran Pérez
-postAlbum: 092024
 ---
 
-ALorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Recently, I received some frustrating news at work—I wasn't assigned to a new project. For context, I work at a software consultancy, and during the summer months, I was assigned to a project. Once it ended, I hoped to be placed on something new. However, I was told that there wasn't a project for me to work on.
 
+Now, being paid without having to do any work might sound like a dream, but after just three days, I quickly became bored. I tried pushing for a new project, but in the meantime, I started procrastinating—playing video games, skipping my routines, eating junk food, and generally neglecting my well-being. This spiraled into a two-week slump where I avoided thinking about my situation and evaded all responsibilities. 
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+**Sometimes, we get trapped in a cycle of misery without even realizing it.**
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Then came Sunday—a day I typically reserve for reflection. For me, Sundays are about journaling and checking in on my goals. That particular Sunday, I realized just how badly I'd let things slip. I was in the worst mental and physical state I'd been in all year. I started feeling hopeless, like I couldn't break free from the rut.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+But then I remembered something: **I just needed a small victory to break out of the loop.**
+
+This is something I've learned from reading self-improvement books and through lots of self-reflection. One book that really helped me was **"Your Head is a Houseboat"**. It includes journaling exercises that encourage you to understand yourself better and stay present. After consistently journaling both in good times and bad, I discovered that I thrive on small victories. 
+
+So, I grabbed a notebook and wrote down everything I wanted to do. After two weeks of doing nothing, the list was long: cleaning, exercising, writing, reading... But I knew from experience that exercising was the key for me. **It's important to prioritize the one thing you know will help the most**. This might be different for everyone, but if you're unsure what works for you, it's time to invest in getting to know yourself better.
+
+I decided to exercise, knowing that it would pull me back to reality and give me the boost I needed. Afterward, I felt reinvigorated—strong enough to tackle everything else on my list. That small victory reminded me that I'm capable and that things aren't as difficult as they seem.
+
+---
+
+By focusing on **small victories**, you're able to pull yourself out of a negative spiral, no matter how deep you feel stuck. It’s about building momentum, one step at a time. And sometimes, that first step is all you need to shift your perspective and regain control.
