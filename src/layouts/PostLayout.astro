@@ -5,16 +5,28 @@ import BaseLayout from "./BaseLayout.astro";
 import { getAlbumImages } from "@utils/photos";
 import PostGallery from "@components/PostGallery.astro";
 import { Image } from "astro:assets";
+import Referral from "@components/Referral.astro";
 
-const { title, description, cover, pubDate, tags, postAlbum } = Astro.props;
+const {
+  title,
+  description,
+  cover,
+  pubDate,
+  tags,
+  postAlbum,
+  referralLink,
+  referralImage,
+  referralDescription,
+  referralTitle,
+} = Astro.props;
 const postAlbumPromise = getAlbumImages(postAlbum);
 const images = await postAlbumPromise;
 ---
 
 <BaseLayout class="absolute z-20">
-  <div class="relative h-screen w-screen max-w-full ">
+  <div class="relative h-screen w-screen max-w-full">
     <div class="absolute bottom-0 left-0 right-0 top-0 z-0 overflow-hidden">
-      <Image 
+      <Image
         src={cover}
         alt={title}
         format="avif"
@@ -22,7 +34,6 @@ const images = await postAlbumPromise;
         loading={"eager"}
         class="h-full w-full object-cover transition-all duration-300 ease-in-out"
       />
-
     </div>
     <div
       class="absolute bottom-0 left-0 right-0 top-0 z-0 bg-black bg-opacity-50"
@@ -41,8 +52,6 @@ const images = await postAlbumPromise;
   <div class="flex-grow">
     <slot />
   </div>
-  <PostGallery
-    images={images}
-    postAlbum={postAlbum}
-    title={title} />
+  <PostGallery images={images} postAlbum={postAlbum} title={title} />
+  <Referral url={referralLink} text={referralTitle} description={referralDescription} imageurl={referralImage}/>
 </BaseLayout>

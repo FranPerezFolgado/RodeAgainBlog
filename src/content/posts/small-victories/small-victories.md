@@ -10,6 +10,10 @@ pubDate: 2024-09-16
 cover: ../../photos/092024/cover.jpg
 coverAlt: Graffiti from Valencia's streets
 author: Fran Pérez
+referralLink: https://amzn.to/3ZH3Pzv
+referralImage: https://m.media-amazon.com/images/I/81yJxESnSFL._SL1500_.jpg
+referralDescription: Your Head is a Houseboat is uniquely hilarious guide to what goes on in your brain, from illustration sensation Campbell Walker aka Struthless.
+referralTitle: You Head is a Houseboat. A Chaotic Guide to Mental Clarity
 ---
 
 

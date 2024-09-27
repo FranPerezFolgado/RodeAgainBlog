@@ -13,6 +13,10 @@ const posts = defineCollection({
       tags: z.array(z.string()),
       author: z.string(),
       postAlbum: z.string().optional(),
+      referralLink: z.string().optional(),
+      referralImage: z.string().optional(),
+      referralDescription: z.string().optional(),
+      referralTitle: z.string().optional(),
     }),
 });
 
