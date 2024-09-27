@@ -2,10 +2,7 @@
 title: You need small victories
 slug: you-need-small-victories
 description: Sometimes we're in a loop of misery, but we only need a small victory to see clarity and get on road again.
-category:
-  - Self Improvement
-tags:
-  - SelfImprovement
+tag: Personal-journal
 pubDate: 2024-09-16
 cover: ../../photos/092024/cover.jpg
 coverAlt: Graffiti from Valencia's streets
