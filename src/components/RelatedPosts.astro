@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+import PostCard from "./PostCard.astro";
+const { tag, postId } = Astro.props;
+
+const allPosts = await getCollection("posts");
+
+const filteredPosts = allPosts.filter(
+  (post) => post.data.tag && post.data.tag.includes(tag) && post.id !== postId
+);
+
+const maxPosts = 3;
+const relatedPosts = filteredPosts.slice(0, maxPosts);
+---
+{filteredPosts.length !== 0 && (
+    
+<div class="container mx-auto px-4 py-16 text-center">
+  <h2 class="mb-4 text-2xl font-bold">Related Posts you might like</h2>
+  <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      relatedPosts.map((post) => (
+        <div class="mx-auto max-w-sm py-4 md:max-w-xl h-auto   ">
+          <a
+            class="block rounded-lg border border-gray-200 hover:shadow-sm focus:outline-none dark:border-neutral-700"
+            href={`/post/${post.slug}`}
+            target="_self"
+          >
+            <div class="relative flex items-center overflow-hidden">
+              <Image
+                class="absolute inset-0 h-full w-32 rounded-s-lg object-cover sm:w-48"
+                src={post.data.cover}
+                alt={post.data.title}
+                quality="low"
+                format="avif"
+                inferSize
+              />
+
+              <div class="ms-32 grow p-4 sm:ms-48">
+                <div class="flex min-h-24 flex-col justify-center">
+                  <h3 class="text-sm font-semibold text-gray-800 dark:text-neutral-300">
+                    {post.data.title}
+                  </h3>
+                  <p class="mt-1 text-sm text-gray-500 dark:text-neutral-500">
+                    {post.data.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+)}
