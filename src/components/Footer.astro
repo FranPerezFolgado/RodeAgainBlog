@@ -9,12 +9,20 @@ import {
   CloseIcon,
 } from "astro-navbar";
 import FooterTitle from "./FooterTitle.astro";
+import { getCollection } from "astro:content";
+
+  // Fetch all posts again inside the function
+  const posts = await getCollection('posts'); // Same collection name as above
+
+  // Collect unique tags from all posts
+  const tags = Array.from(new Set(posts.flatMap(post => post.data.tag)));
+  console.log(tags);
 ---
 
 <footer class="mt-32 py-16">
   <div class="container mx-auto px-4 text-center md:text-left">
     <div
-      class="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-16 lg:gap-24 xl:gap-36"
+      class="grid grid-cols-2 gap-8 md:grid-cols-5 md:gap-16 lg:gap-24 xl:gap-36"
     >
       <div class="col-span-2 md:col-span-2">
         <h2 class="mb-4 font-blackdemo text-2xl">RodeAgain</h2>
@@ -33,7 +41,15 @@ import FooterTitle from "./FooterTitle.astro";
           <Link href="/blog" text="Gallery" class="block" />
         </nav>
       </div>
+      <div class="col-span-1">
+        <FooterTitle text="Topics" />
+        <nav>
+          {tags.map((tag) => (
+            <Link href={`/tags/${tag}/`} text={tag} class="block" />
+          ))}
 
+        </nav>
+      </div>
       <div class="col-span-1">
         <FooterTitle text="Social" />
         <nav>
