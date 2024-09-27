@@ -29,12 +29,11 @@ const relatedPosts = filteredPosts.slice(0, maxPosts);
           >
             <div class="relative flex items-center overflow-hidden">
               <Image
-                class="absolute inset-0 h-full w-32 rounded-s-lg object-cover sm:w-48"
                 src={post.data.cover}
                 alt={post.data.title}
                 quality="low"
                 format="avif"
-                inferSize
+                class="absolute inset-0 h-full w-32 rounded-s-lg object-cover sm:w-48"
               />
 
               <div class="ms-32 grow p-4 sm:ms-48">
