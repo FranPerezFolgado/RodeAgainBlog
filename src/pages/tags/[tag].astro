@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION, POST_PER_PAGE } from "@consts";
+import LastPostCard from "@components/LastPostCard.astro";
+import Pagination from "@components/Pagination.astro";
+import PostCard from "@components/PostCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+const { tag } = Astro.params;
+
+const allPosts = await getCollection("posts");
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const allTags = Array.from(
+    new Set(allPosts.flatMap((post) => post.data.tag)),
+  );
+  return allTags.map((tag) => ({
+    params: { tag },
+  }));
+}
+const filteredPosts = allPosts.filter(
+  (post) => post.data.tag && post.data.tag.includes(tag),
+);
+
+const firstPagePosts = allPosts.slice(0, POST_PER_PAGE);
+const totalPages = Math.ceil(allPosts.length / POST_PER_PAGE);
+
+const basePath = "/page/";
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="m-10 flex flex-col items-center">
+    <h1 class="text-4xl font-bold text-center">{tag}</h1>
+    <div
+      class="grid gap-10 pt-10 sm:grid-cols-1 md:grid-cols-2 md:p-20 lg:grid-cols-2 xl:grid-cols-3"
+    >
+      {firstPagePosts.map((post) => <PostCard post={post} />)}
+    </div>
+  </div>
+
+  <Pagination
+    currentPage={1}
+    lastPage={totalPages}
+    urlPrev={null}
+    urlNext={totalPages > 1 ? `/page/2` : null}
+    basePath={basePath}
+    maxDisplayedPages={5}
+  />
+</BaseLayout>

@@ -21,11 +21,12 @@ const { Content } = await post.render();
 ---
 
 <PostLayout
+id={post.id}
   title={post.data.title}
   description={post.data.description}
   cover={post.data.cover}
   pubDate={post.data.pubDate}
-  tags={post.data.tags}
+  tag={post.data.tag}
   postAlbum={post.data.postAlbum}
   referralLink={post.data.referralLink}
   referralImage={post.data.referralImage}
@@ -46,12 +47,11 @@ const { Content } = await post.render();
       <FormattedDate date={post.data.pubDate} />
       <Separator />
       <a
-        href="/blog/development/"
+        href={`/tags/${post.data.tag}/`}
         class="capitalize no-underline hover:underline"
-        >development
+        >{post.data.tag}
       </a>
-      <Separator />
-      <span>6 min read</span>
+
     </div>
   </div>
   <article

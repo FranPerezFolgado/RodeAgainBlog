@@ -6,13 +6,16 @@ import { getAlbumImages } from "@utils/photos";
 import PostGallery from "@components/PostGallery.astro";
 import { Image } from "astro:assets";
 import Referral from "@components/Referral.astro";
+import TagBadge from "@components/TagBadge.astro";
+import RelatedPosts from "@components/RelatedPosts.astro";
 
 const {
+  id,
   title,
   description,
   cover,
   pubDate,
-  tags,
+  tag,
   postAlbum,
   referralLink,
   referralImage,
@@ -53,5 +56,15 @@ const images = await postAlbumPromise;
     <slot />
   </div>
   <PostGallery images={images} postAlbum={postAlbum} title={title} />
-  <Referral url={referralLink} text={referralTitle} description={referralDescription} imageurl={referralImage}/>
+  <Referral
+    url={referralLink}
+    text={referralTitle}
+    description={referralDescription}
+    imageurl={referralImage}
+  />
+
+  <div class="mx-auto mt-4 flex flex-wrap items-center justify-center gap-2">
+    <TagBadge tag={tag} />
+  </div>
+  <RelatedPosts tag={tag} postId={id} />
 </BaseLayout>
